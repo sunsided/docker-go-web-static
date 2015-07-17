@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+# This script runs a container off the docker image previously
+# created with `./build-image`
+
+docker run --rm \
+	go-webget
+
+
