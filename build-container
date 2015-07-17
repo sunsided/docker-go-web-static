@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+# This script uses the centurylink/golang-builder docker image
+# to build and statically link the Go application within this
+# directory.
+# After the application is built, it then issues a call to
+# the docker daemon to automatically build an docker image using
+# the provided Dockerfile. In order to do so, the local docker
+# socket must be passed to the container by using the volume
+# command line option.
+
+# https://github.com/CenturyLinkLabs/golang-builder
+docker run --rm \
+	-v "$(pwd)":/src \
+	-v /var/run/docker.sock:/var/run/docker.sock \
+	centurylink/golang-builder
+
+
