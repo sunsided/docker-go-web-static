@@ -12,7 +12,7 @@ Issue the following command to build the application and place it in the working
 
 ## Build a docker image containing the statically linked application
 
-Issue the following command to build the application and additionally create a new docker image based on the [Dockerfile](Dockerfile) provided in the working directory.
+Issue the following command to build the application and additionally create a new docker image based on the [Dockerfile](./Dockerfile) provided in the working directory.
 
 ```bash
 ./build-image
