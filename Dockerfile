@@ -4,5 +4,10 @@
 # approximately 5 MB light.
 
 FROM scratch
+
+# copy in the CA certificates to enable SSL
+COPY ca-certificates.crt /etc/ssl/certs/
+
+# copy the app and run it
 COPY go-webget /
 ENTRYPOINT ["/go-webget"]

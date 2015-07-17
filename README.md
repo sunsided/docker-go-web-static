@@ -1,6 +1,10 @@
 # go-webget
 
-A simple Go application that issues a HTTP GET request to [http://httpstat.us/200](http://httpstat.us) and prints the response. The application is built and statically linked using the [centurylink/golang-builder](https://github.com/CenturyLinkLabs/golang-builder) docker image which optionally also creates a slim docker image `FROM scratch` containing the application.
+A simple Go application that issues an HTTPS GET request to [https://www.google.com](https://www.google.com) and prints the response. The application is built and statically linked using the [centurylink/golang-builder](https://github.com/CenturyLinkLabs/golang-builder) docker image which optionally also creates a slim docker image `FROM scratch` containing the application.
+
+## SSL validation
+
+In order to enable SSL validation, Go assumes the default CA certificates to be available under `/etc/ssl/certs/ca-certificates.crt` which obviously is not the case with the `scratch` base image. Since symlinks to out-of-source directories won't work, Arch Linux' standard `ca-certificates.crt` is added here for example purposes.
 
 ## Build and statically link the application
 
